@@ -1,2 +1,2 @@
-<h1>Novellery</h1>
-<p>Official repository of Novellery Application</p>
+<h1>Novellery Web</h1>
+<p>Official repository of Novellery Web Application</p>
