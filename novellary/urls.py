@@ -12,4 +12,5 @@ urlpatterns = [
     path('spotlight',TopTenSubscribedNovels.as_view()),
     path('search',SearchNovel.as_view()),
     path('genre',TopTenViewNovelsByTags.as_view()),
+    path('',include('dj_rest_auth.urls')),
 ]

@@ -1,4 +1,4 @@
-# from django.shortcuts import render
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.response import Response
 from chapter import models,serializers,permissions
 from novel.models import Novel
@@ -12,6 +12,7 @@ from rest_framework.generics import (
 
 # Create your views here.
 class ChapterApi(ListCreateAPIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = models.Chapter.objects.all()
     serializer_class = serializers.AllChapterSerializer
 

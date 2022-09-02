@@ -1,16 +1,17 @@
-from novel import permissions
 from userapp.models import User
 from rest_framework.response import Response
 from novel import models,serializers,permissions
 from django.db.models import Max
 from rest_framework.views import APIView
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated 
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
     RetrieveUpdateDestroyAPIView,
     ListCreateAPIView
 )
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 # Create your views here.
@@ -27,6 +28,7 @@ class SpecificNovelApi(RetrieveUpdateDestroyAPIView):
         return Response(serializer.data)
 
 class NovelApi(ListCreateAPIView):
+    permission_classes = [IsAuthenticatedOrReadOnly]
     queryset = models.Novel.objects.all()
     serializer_class = serializers.NovelSerializer
 
@@ -52,13 +54,14 @@ class SpecificNovelAllChaptersApi(RetrieveAPIView):
             'title',
             'description',
             'created',
-            # 'chaptersID'
+            'chaptersID'
         )
         return data
 
 
 
 class SubscribeNovel(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self,request,pk,*args,**kwargs):
         novel = models.Novel.objects.get(pk=pk)
         is_suscribe = False

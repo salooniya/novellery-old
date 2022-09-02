@@ -34,8 +34,14 @@ INSTALLED_APPS = [
     'novel',
     'chapter',
     'userapp',
+
     'rest_framework',
+    'rest_framework.authtoken',
     'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 ]
 
 MIDDLEWARE = [
@@ -136,8 +143,25 @@ REST_FRAMEWORK = {
 
 AUTH_USER_MODEL = 'userapp.User'
 
-ACCOUNT_EMAIL_REQUIRED = False
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_LOGOUT_ON_GET = True
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
 
 REST_FRAMEWORK = {
-    'SEARCH_PARAM' : ''
+    'SEARCH_PARAM' : '',
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication', 
+    ],
+    'USER_DETAIL_SERIALIZER' : 'userapp.serailizers.UserDetailsSerializer'
 }
+
+SITE_ID = 1
