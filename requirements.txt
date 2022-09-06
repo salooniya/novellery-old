@@ -31,6 +31,7 @@ distlib==0.3.4
 dj-rest-auth==2.2.5
 Django==3.2.8
 django-allauth==0.51.0
+django-cors-headers==3.13.0
 django-crispy-forms==1.14.0
 django-extensions==2.2.5
 django-filter==21.1
