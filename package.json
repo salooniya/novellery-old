@@ -1,0 +1,31 @@
+{
+  "name": "novellery",
+  "version": "1.0.0",
+  "description": "Official repository of Novellery Web Application",
+  "private": "true",
+  "main": "core/index.js",
+  "scripts": {
+    "start": "webpack serve --config config/webpack.dev.js",
+    "build": "webpack --config config/webpack.pro.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salooniya/novellery.git"
+  },
+  "author": "Salooniya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salooniya/novellery/issues"
+  },
+  "homepage": "https://github.com/salooniya/novellery#readme",
+  "dependencies": {
+    "core": "file:"
+  },
+  "devDependencies": {
+    "sass": "^1.54.8",
+    "sass-loader": "^13.0.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1"
+  }
+}

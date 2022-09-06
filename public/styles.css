@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$ff-sans: Poppins, system-ui, sans-serif;
+$ff-display: Lora, serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+html {
+    font-family: $ff-sans;
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+    color: white;
+}
+
+i {
+    font-family: 'Material Icons', emoji;
+    font-weight: normal;
+    font-style: normal;
+    font-size: inherit;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+}
+
+noscript {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+container, inner, box {
+    display: flow-root;
+}
+
+inner {
+    max-width: 1440px;
+    margin: auto;
+}
+
+header {
+    container {
+        background-color: #222;
+    }
+
+    inner {
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.6rem;
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.8rem;
+        }
+
+        a.logo {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+    }
+}
+
+section.auth {
+    inner {
+        padding: 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        max-width: 425px;
+        margin: 8rem auto;
+        gap: 4rem;
+
+        box {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 4.4rem;
+            line-height: 0.6;
+        }
+
+        p {
+            color: lightgray;
+            margin-bottom: 2rem;
+        }
+
+        input {
+            display: flow-root;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-radius: 0.5rem;
+            padding: 1rem 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        input#submit {
+            background-color: lightcoral;
+            color: white;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: lightcoral;
+        }
+    }
+}
+
+section.spotlight {
+    inner {
+        padding: 2rem;
+        aspect-ratio: 3/1;
+        position: relative;
+    }
+
+    slide {
+        display: none;
+        background-color: lightgray;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        height: 100%;
+        color: black;
+        font-size: 2rem;
+    }
+
+    slide[active] {
+        display: flow-root;
+    }
+
+    box {
+        position: absolute;
+        right: 2rem;
+        bottom: 2rem;
+        padding: 2rem;
+        font-size: 3.2rem;
+        display: flex;
+        gap: 1rem;
+
+        i {
+            background-color: rgba(0,0,0,0.4);
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+    }
+}
