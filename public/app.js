@@ -1,6 +1,8 @@
 import {Router, $} from "core";
 import components from "./components";
 import views from "./views";
+import {auth, firestore, snapData} from "./fb";
+import {doc, getDoc} from "firebase/firestore";
 
 const app = new Router();
 const root = $('root');
@@ -10,34 +12,25 @@ app.path('/login', views.Login);
 app.path('/signup', views.Signup);
 app.path('/verify', views.Verify);
 app.path('/reset', views.Reset);
-
-Router.start(app, root, components);
-
-const request = function (method, path, body) {
-    fetch('http://127.0.0.1:8000' + path, {
-        method: method,
-        body: JSON.stringify(body),
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        // withCredentials: true,
-        // credentials: 'include'
-    })
-        .then(res => {console.log(res); return res.json()})
-        .then(doc => console.log(doc))
-        .catch(err => console.log(err));
-};
-
-window.signup = () => request('POST', '/user/registration/', {
-    username: 'T1',
-    email: 't1@gmail.com',
-    password1:'novellery',
-    password2:'novellery',
+app.path('/user', views.User);
+app.path('/logout', async () => {
+    await auth.signOut();
+    location.href = location.origin + '/';
 });
 
-window.login = () => request('POST', '/login/', {
-    email: 't1@gmail.com',
-    password:'novellery',
-});
+app.path('/create-novel', views.CreateNovel);
+app.path('/novels/:novelID/edit', views.EditNovel);
+app.path('/novels/:novelID', views.Novel);
+app.path('/novels/:novelID/create-chapter', views.CreateChapter);
+app.path('/chapters/:id', views.Chapter);
 
-window.subscribe = () => request('GET', '/novel/61fb1f53-cf19-4986-b426-60e647fd4a73/subscribe');
+app.start = false;
+auth.onAuthStateChanged(async (cred) => {
+    if (app.start) return;
+    if (cred) {
+        const ref = doc(firestore, 'users', cred.uid);
+        const snap = await getDoc(ref);
+        root.user = snapData(snap);
+    }
+    Router.start(app, root, components);
+});

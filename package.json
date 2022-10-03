@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/salooniya/novellery#readme",
   "dependencies": {
-    "core": "file:"
+    "core": "file:",
+    "firebase": "^9.9.4"
   },
   "devDependencies": {
     "sass": "^1.54.8",

@@ -66,7 +66,7 @@ header {
     }
 
     inner {
-        padding: 2rem;
+        padding: 1.5rem 2rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -88,6 +88,17 @@ header {
         a.logo {
             font-size: 2.2rem;
             font-weight: 700;
+        }
+
+        a.btn {
+            background-color: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem;
+            font-size: 2.4rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
         }
     }
 }
@@ -122,7 +133,8 @@ section.auth {
             margin-bottom: 2rem;
         }
 
-        input {
+        input, textarea, label {
+            background-color: #fff;
             display: flow-root;
             width: 100%;
             outline: none;
@@ -130,6 +142,11 @@ section.auth {
             border-radius: 0.5rem;
             padding: 1rem 1.5rem;
             font-size: 1.8rem;
+            color: #111111;
+        }
+
+        input[type="file" i] {
+            color: black;
         }
 
         input#submit {
@@ -154,12 +171,78 @@ section.spotlight {
 
     slide {
         display: none;
-        background-color: lightgray;
+        background-color: black;
         border-radius: 0.5rem;
         overflow: hidden;
         height: 100%;
         color: black;
         font-size: 2rem;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            width: 100%;
+            z-index: 1;
+            opacity: 0.6;
+        }
+
+        .genre {
+            z-index: 2;
+            position: absolute;
+            left: 1.6rem;
+            top: 1.6rem;
+            color: lightcoral;
+        }
+
+        div {
+            padding: 1.6rem;
+            position: absolute;
+            z-index: 2;
+            color: #eee;
+            font-size: 1.8rem;
+            left: 0;
+            bottom: 0;
+            width: 70%;
+
+            p {
+                margin: 1rem 0;
+            }
+
+            .title {
+                font-size: 3.2rem;
+                font-weight: 600;
+            }
+
+            .description {
+                font-size: 1.4rem;
+                color: #ddd;
+            }
+
+            tab {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                a {
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-radius: 0.5rem;
+                    padding: 0.6rem 1.2rem;
+                    background-color: rgba(0,0,0,0.5);
+                    color: white;
+                }
+
+                a.cta {
+                    background-color: lightcoral;
+                }
+            }
+        }
     }
 
     slide[active] {
@@ -174,11 +257,151 @@ section.spotlight {
         font-size: 3.2rem;
         display: flex;
         gap: 1rem;
+        z-index: 3;
 
         i {
             background-color: rgba(0,0,0,0.4);
             border-radius: 0.5rem;
             cursor: pointer;
         }
+    }
+}
+
+section.tray {
+    inner {
+        padding: 2rem;
+        position: relative;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.1s;
+
+        i {
+            font-size: 2.4rem;
+            margin-left: 0.5rem;
+            transition: 50ms;
+        }
+    }
+
+    h2:hover {
+        color: lightcoral;
+
+        i {
+            margin-left: 1rem;
+        }
+    }
+
+    box {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .card {
+        display: inline-block;
+        aspect-ratio: 3/4;
+        flex: 1;
+        background-color: lightgray;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        position: relative;
+        color: white;
+        text-decoration: none;
+
+        img {
+            object-fit: cover;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 100%;
+        }
+
+        div {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 1rem;
+
+            h3 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+section.new-novel {
+    form {
+        max-width: 768px;
+    }
+}
+
+section.chapters {
+    inner {
+        padding: 2rem;
+        position: relative;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 2rem;
+        margin-bottom: 4rem;
+        color: white;
+        font-size: 2.8rem;
+        font-weight: 400;
+    }
+
+    box {
+        max-width: 768px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        a {
+            display: block;
+            text-decoration: none;
+            background-color: rgba(0,0,0,0.6);
+            color: white;
+            border-radius: 0.5rem;
+            padding: 1rem 1.4rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: color 0.1s;
+        }
+
+        a:hover {
+            color: lightcoral;
+        }
+    }
+}
+
+section.chapter {
+
+    inner {
+        padding: 2rem;
+        max-width: 1024px;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 3.2rem;
+        margin: 4rem 0;
+    }
+
+    p {
+        font-size: 1.6rem;
     }
 }

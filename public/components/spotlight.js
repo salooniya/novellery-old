@@ -1,19 +1,37 @@
 import {$} from 'core';
 
-export function Spotlight () {
+export function Spotlight (novels, single) {
     return (`
         <section class="spotlight">
             <container>
                 <inner>
-                    <slide>A</slide>
-                    <slide>B</slide>
-                    <slide>C</slide>
-                    <slide>D</slide>
-                    <slide>E</slide>
-                    <box>
-                        <i class="left">chevron_left</i>
-                        <i class="right">chevron_right</i>
-                    </box>
+                    ${
+                        novels.map(n => {
+                            return (`
+                                <slide>
+                                    <img src="${n.cover}" alt="image">
+                                    <p class="genre">${n.genre}</p>
+                                    <div>
+                                        <p class="title">${n.title}</p>
+                                        <p class="description">${n.description}</p>
+                                        <tab>
+                                            <a class="cta" href="/novels/${n.id}">READ NOW</a>
+                                            <a>SUBSCRIBE</a>
+                                        </tab>
+                                    </div>
+                                </slide>
+                            `)
+                        }).join('')
+                    }
+                    ${
+                        !single ? (`
+                            <box>
+                                <i class="left">chevron_left</i>
+                                <i class="right">chevron_right</i>
+                            </box>
+                        `) : ''
+                    }
+                    
                 </inner>
             </container>
         </section>
@@ -53,7 +71,7 @@ Spotlight.load = function () {
     const doc = {
         currSlide: 0,
         numSlides: $slides.length,
-        slideTime: 3000
+        slideTime: 4000
     };
 
     showSlide($slides, doc);

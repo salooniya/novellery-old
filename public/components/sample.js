@@ -47,4 +47,4 @@ window.userme = () => req('GET', '/userme');
 
 window.user = () => req('GET', '/user/1fd623e6-a744-4b81-a160-4a94eafa9c52');
 
-window.novel = () => req('GET', '/novel/87627e3b-7df6-4230-a06e-968ba8a8984e/subscribe');
+window.novel = () => req('GET', '/novel.js/87627e3b-7df6-4230-a06e-968ba8a8984e/subscribe');

@@ -1,3 +1,8 @@
+import {$} from "../../core";
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth, firestore, snapMap} from "../fb";
+import {doc, setDoc,collection, query, where, getDocs} from "firebase/firestore";
+
 export function Login () {
     return (`
         <section class="auth">
@@ -22,3 +27,26 @@ export function Login () {
         </section>
     `);
 }
+
+Login.load = async function () {
+    const $section = $('section.auth');
+    const $form = $('section.auth form');
+
+    $form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const username = $('#username').value;
+        const password = $('#password').value;
+
+        console.log(username)
+        console.log(password)
+
+        const q = query(collection(firestore, 'users'), where('username', '==', username));
+        const snap = await getDocs(q);
+        const user = snapMap(snap)[0];
+
+        await signInWithEmailAndPassword(auth, user.email, password);
+
+        location.href = location.origin + '/';
+    });
+};
