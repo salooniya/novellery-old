@@ -1,0 +1,371 @@
+/* ==== color */
+
+.c-dark-000 {
+  color: #000;
+}
+
+.c-dark-100 {
+  color: #111;
+}
+
+.c-dark-200 {
+  color: #222;
+}
+
+.c-dark-300 {
+  color: #333;
+}
+
+.c-light-000 {
+  color: #fff;
+}
+
+.c-light-100 {
+  color: #eee;
+}
+
+.c-light-200 {
+  color: #ddd;
+}
+
+.c-light-300 {
+  color: #ccc;
+}
+
+/* ==== background-color */
+
+.bgc-dark-000 {
+  background-color: #000;
+}
+
+.bgc-dark-100 {
+  background-color: #111;
+}
+
+.bgc-dark-200 {
+  background-color: #222;
+}
+
+.bgc-dark-300 {
+  background-color: #333;
+}
+
+.bgc-light-000 {
+  background-color: #fff;
+}
+
+.bgc-light-100 {
+  background-color: #eee;
+}
+
+.bgc-light-200 {
+  background-color: #ddd;
+}
+
+.bgc-light-300 {
+  background-color: #ccc;
+}
+
+/* ==== display */
+
+.d-n {
+  display: none;
+}
+
+.d-i {
+  display: inline;
+}
+
+.d-fr {
+  display: flow-root;
+}
+
+.d-b {
+  display: block;
+}
+
+.d-ib {
+  display: inline-block;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-if {
+  display: inline-flex;
+}
+
+.d-g {
+  display: grid;
+}
+
+.d-ig {
+  display: inline-grid;
+}
+
+/* ==== font-weight */
+
+.fw-100 {
+  font-weight: 100;
+}
+
+.fw-200 {
+  font-weight: 200;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.fw-900 {
+  font-weight: 900;
+}
+
+/* ==== font-size */
+
+.fz-s {
+  font-size: 1rem;
+}
+
+.fz-m {
+  font-size: 2rem;
+}
+
+.fz-l {
+  font-size: 4rem;
+}
+
+.fz-s-100 {
+  font-size: 1.0rem;
+}
+
+.fz-s-200 {
+  font-size: 1.1rem;
+}
+
+.fz-s-300 {
+  font-size: 1.2rem;
+}
+
+.fz-s-400 {
+  font-size: 1.3rem;
+}
+
+.fz-s-500 {
+  font-size: 1.4rem;
+}
+
+.fz-s-600 {
+  font-size: 1.5rem;
+}
+
+.fz-s-700 {
+  font-size: 1.6rem;
+}
+
+.fz-s-800 {
+  font-size: 1.7rem;
+}
+
+.fz-s-900 {
+  font-size: 1.8rem;
+}
+
+.fz-m-100 {
+  font-size: 2.0rem;
+}
+
+.fz-m-200 {
+  font-size: 2.2rem;
+}
+
+.fz-m-300 {
+  font-size: 2.4rem;
+}
+
+.fz-m-400 {
+  font-size: 2.6rem;
+}
+
+.fz-m-500 {
+  font-size: 2.8rem;
+}
+
+.fz-m-600 {
+  font-size: 3.0rem;
+}
+
+.fz-m-700 {
+  font-size: 3.2rem;
+}
+
+.fz-m-800 {
+  font-size: 3.4rem;
+}
+
+.fz-m-900 {
+  font-size: 3.6rem;
+}
+
+.fz-l-100 {
+  font-size: 4.0rem;
+}
+
+.fz-l-200 {
+  font-size: 4.4rem;
+}
+
+.fz-l-300 {
+  font-size: 4.8rem;
+}
+
+.fz-l-400 {
+  font-size: 5.2rem;
+}
+
+.fz-l-500 {
+  font-size: 5.6rem;
+}
+
+.fz-l-600 {
+  font-size: 6.0rem;
+}
+
+.fz-l-700 {
+  font-size: 6.4rem;
+}
+
+.fz-l-800 {
+  font-size: 6.8rem;
+}
+
+.fz-l-900 {
+  font-size: 7.2rem;
+}
+
+/* ==== max-width */
+
+.maw-xs {
+  max-width: 425px;
+}
+
+.maw-s {
+  max-width: 768px;
+}
+
+.maw-m {
+  max-width: 1024px;
+}
+
+.maw-l {
+  max-width: 1440px;
+}
+
+/* ==== margin */
+
+.m-a {
+  margin: auto;
+}
+
+.mt-a {
+  margin-top: auto;
+}
+
+.mr-a {
+  margin-right: auto;
+}
+
+.mb-a {
+  margin-bottom: auto;
+}
+
+.ml-a {
+  margin-left: auto;
+}
+
+/* ==== align-items */
+
+.ai-b {
+  align-items: baseline;
+}
+
+.ai-c {
+  align-items: center;
+}
+
+.ai-fs {
+  align-items: flex-start;
+}
+
+.ai-fe {
+  align-items: flex-end;
+}
+
+.ai-s {
+  align-items: stretch;
+}
+
+/* ==== justify-content */
+
+.jc-c {
+  justify-content: center;
+}
+
+.jc-fs {
+  justify-content: flex-start;
+}
+
+.jc-fe {
+  justify-content: flex-end;
+}
+
+.jc-sa {
+  justify-content: space-around;
+}
+
+.jc-sb {
+  justify-content: space-between;
+}
+
+/* ==== border */
+
+.bd-n {
+  border: none;
+}
+
+/* ==== outline */
+
+.ol-n {
+  outline: none;
+}
+
+/* ==== cursor */
+
+.cur-d {
+  cursor: default;
+}
+
+.cur-p {
+  cursor: pointer;
+}
